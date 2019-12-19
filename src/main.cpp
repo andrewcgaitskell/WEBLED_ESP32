@@ -14,7 +14,7 @@ char password[] = SECRET_PASS;   // your network password
 
 WebServer server(80);
 
-const int led = 13;
+const int led = 2;
 
 void handleRoot() {
   digitalWrite(led, 1);
@@ -76,4 +76,6 @@ void setup(void) {
 
 void loop(void) {
   server.handleClient();
+  Serial.print("IP address: ");
+  Serial.println(WiFi.localIP());
 }
