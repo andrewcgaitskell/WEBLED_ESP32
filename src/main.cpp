@@ -58,7 +58,7 @@ void setup(void) {
   Serial.print("IP address: ");
   Serial.println(WiFi.localIP());
 
-  if (MDNS.begin("esp32")) {
+  if (MDNS.begin("esp32_led")) {
     Serial.println("MDNS responder started");
   }
 
