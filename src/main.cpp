@@ -1,10 +1,16 @@
+
+#include <iostream>
+
+#include "secrets.h"
+
+char ssid[] = SECRET_SSID;   // your network SSID (name) 
+char password[] = SECRET_PASS;   // your network password
+
+
 #include <WiFi.h>
 #include <WiFiClient.h>
 #include <WebServer.h>
 #include <ESPmDNS.h>
-
-const char* ssid = "........";
-const char* password = "........";
 
 WebServer server(80);
 
@@ -12,7 +18,7 @@ const int led = 13;
 
 void handleRoot() {
   digitalWrite(led, 1);
-  server.send(200, "text/plain", "hello from esp8266!");
+  server.send(200, "text/plain", "hello from esp32!");
   digitalWrite(led, 0);
 }
 
